@@ -88,6 +88,12 @@ public class PrefController {
         return new Result(true,StatusCode.OK,"查询成功",list);
     }
 
+    @GetMapping(value = "/hello" )
+    public Result hello(){
+
+        return new Result(true,StatusCode.OK,"查询成功","Hello OceansWu");
+    }
+
 
     /***
      * 分页搜索实现
