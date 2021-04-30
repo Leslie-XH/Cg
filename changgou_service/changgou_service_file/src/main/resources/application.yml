@@ -1,8 +1,15 @@
 spring:
+  application:
+    name: file
   servlet:
     multipart:
       max-file-size: 100MB
       max-request-size: 100MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.99.196.27:3306/changgou_file?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
 server:
   port: 9008
 eureka:
@@ -14,6 +21,9 @@ eureka:
 feign:
   hystrix:
     enabled: true
+
+
+
 
 
 

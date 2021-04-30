@@ -1,18 +1,27 @@
 package com.changgou.file.util;
 
+import com.changgou.file.dao.FileInfoMapper;
+import com.changgou.file.service.FileInfoService;
 import org.csource.common.NameValuePair;
 import org.csource.fastdfs.*;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Date;
 import java.util.Properties;
 
 public class FastDFSClient {
 
     private static org.slf4j.Logger logger = LoggerFactory.getLogger(FastDFSClient.class);
+
+    @Autowired
+    private FileInfoService fileInfoService;
+    @Autowired
+    private FileInfoMapper fileInfoMapper;
 
     /***
      * 初始化加载FastDFS的TrackerServer配置
